@@ -1,1 +1,11 @@
-{"buildCommand":"npm run build","outputDirectory":"dist","framework":null}
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null,
+  "functions": {
+    "api/pair.js": {
+      "maxDuration": 30,
+      "includeFiles": "dist/recipes.js"
+    }
+  }
+}

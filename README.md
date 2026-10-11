@@ -16,7 +16,7 @@ Drag collection tiles onto the desk and drop one onto another. Or select a works
 1. Extract this archive and push its contents to your own GitHub repository.
 2. Import the repository on Vercel.
 3. Use Framework Preset **Other**, Build Command `npm run build`, Output Directory `dist`. The included vercel.json sets these for you.
-4. Deploy. That host serves the static desk only. Shared Gemma discoveries need `npm start` and the keys in `.env`.
+4. Add `GEMINI_API_KEY` in the project’s environment variables, then deploy. `api/pair.js` answers crafts. The desk is served from `dist`.
 
 ## Deploy on GitHub Pages
 Push to the `main` branch, then choose Settings → Pages → Source → GitHub Actions. The included workflow publishes `dist`. All asset paths are relative, so repository subpaths work. You can also manually host the contents of dist on any static host.
@@ -27,6 +27,7 @@ Push to the `main` branch, then choose Settings → Pages → Source → GitHub 
 - dist/app.js — pointer interactions, collection, journal, saves, daily goals, sound
 - dist/recipes.js — curated recipes, local mixer, and the call to `/api/pair`
 - server/index.cjs — local site and pair API
+- api/pair.js — the same pair API as a Vercel function
 - server/craft.cjs — Gemma, Llama fallback, and the saved pair cache
 - vercel.json — static deployment settings
 - .github/workflows/pages.yml — GitHub Pages deployment
